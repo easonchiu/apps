@@ -1,0 +1,123 @@
+:root {
+  --main-width: 1200px;
+  --font: 'n', sans-serif;
+  --bold-font: 'nb', sans-serif;
+  --title-color: #fff;
+  --text-color: rgb(113, 118, 123);
+  --body-color: #171717;
+  --container-color: #333;
+  --h1-fontsize: 34px;
+  --p-fontsize: 16px;
+  --small-fontsize: 14px;
+  --container-padding: 32px;
+}
+
+@font-face {
+  font-family: 'n';
+  src: url('/static/fonts/Nunito-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'nb';
+  src: url('/static/fonts/Nunito-SemiBold.ttf');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #171717;
+  min-height: 100vh;
+  font-family: var(--font);
+  position: relative;
+  line-height: 1.5;
+}
+
+body > .main {
+  width: var(--main-width);
+  margin: 0 auto;
+  padding: 50px 0;
+  min-height: 100px;
+}
+
+.app-header {
+  height: 90px;
+  background-color: #2A2B2C;
+  overflow: hidden;
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.app-header .inner {
+  width: var(--main-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.app-header .inner .logo {
+  display: block;
+  width: 137px;
+  height: 37px;
+  background-image: url('/static/images/logo.png');
+  background-size: 100% 100%;
+}
+
+.app-header .inner nav {
+  margin-left: 120px;
+}
+
+.app-header .inner nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.app-header .inner nav li {
+  display: block;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.app-header .inner nav li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 26px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 25px;
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+}
+
+.app-header .inner nav li a:hover {
+  opacity: 1;
+}
+
+.app-header .inner nav li a.active {
+  background-color: #323435;
+  opacity: 1;
+}
+
+.app-footer {
+  display: block;
+  padding-bottom: 50px;
+}
+
+.app-footer small {
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.3;
+}
+
+/* 404 page */
+.page-404 {
+  display: block;
+}

@@ -1,0 +1,55 @@
+.page-privacy-policy {
+  display: block;
+}
+
+.page-privacy-policy .main > h1 {
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 15px;
+  font-family: var(--bold-font);
+}
+
+.page-privacy-policy .main > time {
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  opacity: 0.5;
+  margin-bottom: 40px;
+  padding-left: 15px;
+}
+
+.page-privacy-policy .main > .content {
+  border-radius: 20px;
+  background-color: #2A2B2C;
+  padding: 32px;
+  line-height: 1.5;
+}
+
+.page-privacy-policy .main > .content h2 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+  font-family: var(--bold-font);
+}
+
+.page-privacy-policy .main > .content h2:not(:first-child) {
+  padding-top: 10px;
+}
+
+.page-privacy-policy .main > .content p {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.page-privacy-policy .main > .content ul {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}

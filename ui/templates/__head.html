@@ -1,0 +1,21 @@
+{{- define "head" -}}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{- if .title -}}
+  <title>YSGame Studios - {{.title}}</title>
+  {{- else -}}
+  <title>YSGame Studios</title>
+  {{- end -}}
+  <link rel="icon" href="https://www.sufystatic.com/favicon.ico" />
+  <link type="text/css" rel="stylesheet" href="/static/styles/normalize.css">
+  <link type="text/css" rel="stylesheet" href="/static/styles/common.css">
+  {{- if eq .active "games" -}}
+  <link type="text/css" rel="stylesheet" href="/static/styles/games.css">
+  {{- else if eq .active "news" -}}
+  <link type="text/css" rel="stylesheet" href="/static/styles/news.css">
+  {{- else if eq .active "privacy_policy" -}}
+  <link type="text/css" rel="stylesheet" href="/static/styles/privacy_policy.css">
+  {{- else if eq .active "contact" -}}
+  <link type="text/css" rel="stylesheet" href="/static/styles/contact.css">
+  {{- end -}}
+{{- end -}}

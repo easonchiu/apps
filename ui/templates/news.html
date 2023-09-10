@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{- template "head" . -}}
+</head>
+
+<body class="page-news">
+  {{- template "app-header" . -}}
+
+  <div class="main">
+    {{.active}}
+  </div>
+
+  {{- template "app-footer" . -}}
+</body>
+</html>

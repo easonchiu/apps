@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{- template "head" . -}}
+</head>
+
+<body class="page-games">
+  {{- template "app-header" . -}}
+
+  <div class="main">
+    <div class="banners">
+      {{- if eq .game "sudoku_crown" -}}
+      {{- template "game-sudoku-crown-banners" . -}}
+      {{- else if eq .game "block_cuties" -}}
+      {{- template "game-block-cuties-banners" . -}}
+      {{- else if eq .game "digit_merge" -}}
+      {{- template "game-digit-merge-banners" . -}}
+      {{- end -}}
+    </div>
+
+    <div class="content">
+      <div class="app-info">
+        {{- if eq .game "sudoku_crown" -}}
+        {{- template "game-sudoku-crown-info" . -}}
+        {{- else if eq .game "block_cuties" -}}
+        {{- template "game-block-cuties-info" . -}}
+        {{- else if eq .game "digit_merge" -}}
+        {{- template "game-digit-merge-info" . -}}
+        {{- end -}}
+      </div>
+
+      <div class="app-interface">
+        {{- if eq .game "sudoku_crown" -}}
+        {{- template "game-sudoku-crown-interface" . -}}
+        {{- else if eq .game "block_cuties" -}}
+        {{- template "game-block-cuties-interface" . -}}
+        {{- else if eq .game "digit_merge" -}}
+        {{- template "game-digit-merge-interface" . -}}
+        {{- end -}}
+      </div>
+
+      <article>
+        {{- if eq .game "sudoku_crown" -}}
+        {{- template "game-sudoku-crown-content" . -}}
+        {{- else if eq .game "block_cuties" -}}
+        {{- template "game-block-cuties-content" . -}}
+        {{- else if eq .game "digit_merge" -}}
+        {{- template "game-digit-merge-content" . -}}
+        {{- end -}}
+      </article>
+    </div>
+  </div>
+
+  {{- template "app-footer" . -}}
+</body>
+</html>

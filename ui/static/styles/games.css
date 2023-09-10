@@ -1,0 +1,30 @@
+.page-games .main {
+  padding-top: 0;
+}
+
+.page-games .main > .banners {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #2A2B2C;
+  height: 300px;
+  margin-bottom: 40px;
+}
+
+.page-games .main > .content {
+  border-radius: 20px;
+  background-color: #2A2B2C;
+  line-height: 1.5;
+}
+
+.page-games .main > .content .app-info {
+  padding: 32px;
+}
+
+.page-games .main > .content .app-interface {
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 32px;
+}
+
+.page-games .main > .content article {
+  padding: 32px;
+}

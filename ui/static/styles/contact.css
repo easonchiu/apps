@@ -1,0 +1,16 @@
+.page-contact .main > h1 {
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 15px;
+  font-family: var(--bold-font);
+  margin-bottom: 40px;
+}
+
+.page-contact .main > .content {
+  border-radius: 20px;
+  background-color: #2A2B2C;
+  padding: 32px;
+  line-height: 1.5;
+}
