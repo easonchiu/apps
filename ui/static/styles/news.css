@@ -1,1 +1,14 @@
-.page-news {}
+.page-news .main > h1 {
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+  font-family: var(--bold-font);
+  margin: 0;
+  padding-left: 15px;
+  margin-bottom: 32px;
+}
+
+.page-news .main > .content {
+  border-radius: var(--container-border-radius);
+  background-color: var(--container-color);
+  padding: var(--container-padding);
+}

@@ -3,35 +3,32 @@
 }
 
 .page-privacy-policy .main > h1 {
-  color: #fff;
-  font-size: 34px;
-  line-height: 1.5;
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+  font-family: var(--bold-font);
   margin: 0;
   padding-left: 15px;
-  font-family: var(--bold-font);
 }
 
 .page-privacy-policy .main > time {
-  color: #fff;
-  font-size: 14px;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
   display: block;
-  opacity: 0.5;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   padding-left: 15px;
 }
 
 .page-privacy-policy .main > .content {
-  border-radius: 20px;
-  background-color: #2A2B2C;
-  padding: 32px;
-  line-height: 1.5;
+  border-radius: var(--container-border-radius);
+  background-color: var(--container-color);
+  padding: var(--container-padding);
 }
 
 .page-privacy-policy .main > .content h2 {
-  color: #fff;
-  font-size: 24px;
-  margin: 0;
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
   font-family: var(--bold-font);
+  margin: 0;
 }
 
 .page-privacy-policy .main > .content h2:not(:first-child) {
@@ -39,17 +36,13 @@
 }
 
 .page-privacy-policy .main > .content p {
-  color: #fff;
-  font-size: 18px;
-  margin: 0;
-  opacity: 0.6;
-  margin-bottom: 10px;
+  color: var(--text-color);
+  font-size: var(--p-font-size);
+  margin: 0 0 10px 0;
 }
 
 .page-privacy-policy .main > .content ul {
-  color: #fff;
-  font-size: 18px;
-  margin: 0;
-  opacity: 0.6;
-  margin-bottom: 10px;
+  color: var(--text-color);
+  font-size: var(--p-font-size);
+  margin: 0 0 10px 0;
 }

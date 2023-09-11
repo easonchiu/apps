@@ -2,14 +2,21 @@
   --main-width: 1200px;
   --font: 'n', sans-serif;
   --bold-font: 'nb', sans-serif;
+  
   --title-color: #fff;
   --text-color: rgb(113, 118, 123);
-  --body-color: #171717;
-  --container-color: #333;
-  --h1-fontsize: 34px;
-  --p-fontsize: 16px;
-  --small-fontsize: 14px;
+  --body-color: #191919;
+  
+  --h1-font-size: 34px;
+  --h2-font-size: 24px;
+  --p-font-size: 16px;
+  --small-font-size: 14px;
+
+  --container-color: #252525;
+  --container-hover-color: #303030;
+  --container-border-color: #303030;
   --container-padding: 32px;
+  --container-border-radius: 15px;
 }
 
 @font-face {
@@ -25,23 +32,29 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #171717;
+  background-color: var(--body-color);
   min-height: 100vh;
   font-family: var(--font);
   position: relative;
   line-height: 1.5;
 }
 
+* {
+  line-height: 1.5;
+}
+
 body > .main {
   width: var(--main-width);
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 40px 0;
   min-height: 100px;
 }
 
 .app-header {
   height: 90px;
-  background-color: #2A2B2C;
+  background-color: rgba(40, 40, 40, 0.9);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--container-border-color);
   overflow: hidden;
   position: sticky;
   left: 0;
@@ -56,6 +69,7 @@ body > .main {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  height: inherit;
 }
 
 .app-header .inner .logo {
@@ -73,11 +87,12 @@ body > .main {
 .app-header .inner nav ul {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .app-header .inner nav li {
   display: block;
-  height: 50px;
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -85,23 +100,22 @@ body > .main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  padding: 0 26px;
-  color: #fff;
-  font-size: 14px;
+  height: 40px;
+  padding: 0 20px;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
   text-decoration: none;
   border-radius: 25px;
-  opacity: 0.5;
   transition: all 0.3s ease-out;
 }
 
 .app-header .inner nav li a:hover {
-  opacity: 1;
+  color: var(--title-color);
 }
 
 .app-header .inner nav li a.active {
-  background-color: #323435;
-  opacity: 1;
+  background-color: var(--container-hover-color);
+  color: var(--title-color);
 }
 
 .app-footer {
@@ -112,9 +126,9 @@ body > .main {
 .app-footer small {
   text-align: center;
   display: block;
-  color: #fff;
-  font-size: 14px;
-  opacity: 0.3;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  opacity: 0.5;
 }
 
 /* 404 page */
