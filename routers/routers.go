@@ -15,7 +15,7 @@ func RegisterRouters(g *gin.Engine) {
 	ctl := new(controllers.Controller)
 
 	group := g.Group("")
-	group.GET("/", ctl.PageSudokuCrown)
+	group.GET("/", ctl.PageHomepage)
 	group.GET("/games/sudoku-crown", ctl.PageSudokuCrown)
 	group.GET("/games/block-cuties", ctl.PageBlockCuties)
 	group.GET("/games/digit-merge", ctl.PageDigitMerge)

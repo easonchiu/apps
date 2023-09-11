@@ -14,7 +14,7 @@
   color: var(--text-color);
   font-size: var(--small-font-size);
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: var(--margin-big);
   padding-left: 15px;
 }
 
@@ -45,4 +45,14 @@
   color: var(--text-color);
   font-size: var(--p-font-size);
   margin: 0 0 10px 0;
+}
+
+@media (max-width: 800px) {
+  .page-privacy-policy .main > h1 {
+    padding-left: 10px;
+  }
+
+  .page-privacy-policy .main > time {
+    padding-left: 10px;
+  }
 }

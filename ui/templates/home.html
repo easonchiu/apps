@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{- template "head" . -}}
+</head>
+
+<body class="page-home">
+  {{- template "app-header" . -}}
+
+  <div class="main">
+    <div class="games">
+      <div class="game">
+        <a class="banner" href="/games/sudoku-crown">
+          {{- template "game-sudoku-crown-banner" . -}}  
+        </a>
+        <div class="info">
+          {{- template "game-sudoku-crown-info" . -}}
+        </div>
+      </div>
+
+      <div class="game">
+        <a class="banner" href="/games/block-cuties">
+          {{- template "game-block-cuties-banner" . -}}  
+        </a>
+        <div class="info">
+          {{- template "game-block-cuties-info" . -}}
+        </div>
+      </div>
+
+      <div class="game">
+        <a class="banner" href="/games/digit-merge">
+          {{- template "game-digit-merge-banner" . -}}  
+        </a>
+        <div class="info">
+          {{- template "game-digit-merge-info" . -}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{- template "app-footer" . -}}
+</body>
+</html>

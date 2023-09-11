@@ -9,13 +9,13 @@
   {{- template "app-header" . -}}
 
   <div class="main">
-    <div class="banners">
+    <div class="banner">
       {{- if eq .game "sudoku_crown" -}}
-      {{- template "game-sudoku-crown-banners" . -}}
+      {{- template "game-sudoku-crown-banner" . -}}
       {{- else if eq .game "block_cuties" -}}
-      {{- template "game-block-cuties-banners" . -}}
+      {{- template "game-block-cuties-banner" . -}}
       {{- else if eq .game "digit_merge" -}}
-      {{- template "game-digit-merge-banners" . -}}
+      {{- template "game-digit-merge-banner" . -}}
       {{- end -}}
     </div>
 

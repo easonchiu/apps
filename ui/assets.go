@@ -24,7 +24,6 @@ func GetTemplate() *template.Template {
 }
 
 // resource is an interface that provides static file
-// xx
 type resource struct {
 	prefix string
 	fs     embed.FS

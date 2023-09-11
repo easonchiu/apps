@@ -12,6 +12,9 @@
   --p-font-size: 16px;
   --small-font-size: 14px;
 
+  --margin-big: 32px;
+  --margin-small: 20px;
+
   --container-color: #252525;
   --container-hover-color: #303030;
   --container-border-color: #303030;
@@ -48,6 +51,7 @@ body > .main {
   margin: 0 auto;
   padding: 40px 0;
   min-height: 100px;
+  overflow: hidden;
 }
 
 .app-header {
@@ -107,6 +111,7 @@ body > .main {
   text-decoration: none;
   border-radius: 25px;
   transition: all 0.3s ease-out;
+  cursor: pointer;
 }
 
 .app-header .inner nav li a:hover {
@@ -134,4 +139,79 @@ body > .main {
 /* 404 page */
 .page-404 {
   display: block;
+}
+
+.download-ios {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  background-color: #212121;
+  border-radius: 10px;
+  border: 1px solid #0E0E0E;
+  box-shadow: 0 0 0 1px #343434 inset;
+  text-decoration: none;
+  padding: 0 20px 0 55px;
+  background-image: url('/static/images/apple-logo.png');
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  transition: all 0.25s ease-out;
+}
+
+.download-ios:hover {
+  background-color: #252525;
+}
+
+.download-ios span {
+  display: block;
+  color: #fff;
+  line-height: 1.2;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.download-ios strong {
+  display: block;
+  color: #fff;
+  line-height: 1;
+  font-size: 18.5px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  :root {
+    --h1-font-size: 24px;
+    --h2-font-size: 18px;
+    --p-font-size: 14px;
+    --small-font-size: 12px;
+    
+    --container-padding: 16px;
+    --margin-big: 15px;
+    --margin-small: 15px;
+  }
+
+  body > .main {
+    width: auto;
+    padding: 16px;
+    margin: 0 0 12px 0;
+  }
+
+  .app-header {
+    height: 60px;
+  }
+
+  .app-header .inner {
+    width: auto;
+    padding: 0 10px;
+  }
+
+  .app-header .inner .logo {
+    scale: 0.8;
+  }
+
+  .app-header .inner nav {
+    display: none;
+  }
 }

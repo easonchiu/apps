@@ -4,6 +4,12 @@ import "github.com/gin-gonic/gin"
 
 type Controller struct{}
 
+func (Controller) PageHomepage(ctx *gin.Context) {
+	ctx.HTML(200, "home.html", gin.H{
+		"active": "games",
+	})
+}
+
 func (Controller) PageSudokuCrown(ctx *gin.Context) {
 	ctx.HTML(200, "games.html", gin.H{
 		"active": "games",
