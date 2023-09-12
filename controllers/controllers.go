@@ -34,8 +34,8 @@ func (Controller) PageDigitMerge(ctx *gin.Context) {
 	})
 }
 
-func (Controller) PagePrivacyPolicy(ctx *gin.Context) {
-	ctx.HTML(200, "privacy_policy.html", gin.H{
+func (Controller) PagePrivacy(ctx *gin.Context) {
+	ctx.HTML(200, "privacy.html", gin.H{
 		"active": "privacy_policy",
 		"title":  "Privacy Policy",
 	})

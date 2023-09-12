@@ -20,7 +20,7 @@ func RegisterRouters(g *gin.Engine) {
 	group.GET("/games/block-cuties", ctl.PageBlockCuties)
 	group.GET("/games/digit-merge", ctl.PageDigitMerge)
 	group.GET("/news", ctl.PageNews)
-	group.GET("/privacy-policy", ctl.PagePrivacyPolicy)
+	group.GET("/privacy", ctl.PagePrivacy)
 	group.GET("/contact", ctl.PageContact)
 	g.NoRoute(ctl.PageNoFound)
 }
