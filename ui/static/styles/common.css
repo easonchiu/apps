@@ -57,7 +57,7 @@ body .main {
 
 .app-header {
   height: 90px;
-  background-color: rgba(40, 40, 40, 0.9);
+  background-color: rgba(40, 40, 40, 0.95);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid var(--container-border-color);
   position: sticky;
@@ -184,6 +184,21 @@ body .main {
   display: block;
 }
 
+.page-404 p {
+  padding: 200px 0;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.page-404 a {
+  color: var(--text-color);
+  transition: all 0.2s ease-out;
+}
+
+.page-404 a:hover {
+  color: var(--title-color);
+}
+
 .download-ios {
   display: flex;
   flex-direction: column;
@@ -274,5 +289,16 @@ body .main {
 
   .app-footer nav li {
     padding: 0 10px;
+  }
+
+  .download-ios {
+    height: 50px;
+    padding: 0 10px 0 45px;
+    border-radius: 8px;
+    background-position: 10px center;
+  }
+
+  .download-ios span {
+    line-height: 1;
   }
 }

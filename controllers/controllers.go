@@ -12,16 +12,18 @@ func (Controller) PageHomepage(ctx *gin.Context) {
 
 func (Controller) PageSudokuCrown(ctx *gin.Context) {
 	ctx.HTML(200, "games.html", gin.H{
-		"active": "games",
-		"title":  "Games",
-		"game":   "sudoku_crown",
+		"active":  "games",
+		"title":   "Sudoku Crown",
+		"d":       "d",
+		"keyword": "kwd",
+		"game":    "sudoku_crown",
 	})
 }
 
 func (Controller) PageBlockCuties(ctx *gin.Context) {
 	ctx.HTML(200, "games.html", gin.H{
 		"active": "games",
-		"title":  "Games",
+		"title":  "Block Cuties",
 		"game":   "block_cuties",
 	})
 }
@@ -29,7 +31,7 @@ func (Controller) PageBlockCuties(ctx *gin.Context) {
 func (Controller) PageDigitMerge(ctx *gin.Context) {
 	ctx.HTML(200, "games.html", gin.H{
 		"active": "games",
-		"title":  "Games",
+		"title":  "Digit Merge!",
 		"game":   "digit_merge",
 	})
 }
