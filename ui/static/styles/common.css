@@ -45,6 +45,7 @@ body {
 
 * {
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 body > .main {
@@ -93,6 +94,7 @@ body > .main {
   display: flex;
   align-items: center;
   margin: 0;
+  padding: 0;
 }
 
 .app-header .inner nav li {
@@ -212,6 +214,17 @@ body > .main {
     scale: 0.8;
   }
 
+  .app-header .inner nav {
+    margin-left: auto;
+  }
+
+  .app-header .inner nav li a {
+    padding: 0 5px;
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+}
+
+@media (max-width: 420px) {
   .app-header .inner nav {
     display: none;
   }

@@ -24,3 +24,9 @@
   color: var(--text-color);
   margin: 0;
 }
+
+@media (max-width: 800px) {
+  .page-news .main > h1 {
+    padding-left: 10px;
+  }
+}

@@ -22,6 +22,7 @@
   border-radius: var(--container-border-radius);
   background-color: var(--container-color);
   padding: var(--container-padding);
+  overflow: hidden;
 }
 
 .page-privacy .main > .content h2 {
@@ -37,6 +38,7 @@
 
 .page-privacy .main > .content .sub {
   padding-left: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.04);
 }
 
 .page-privacy .main > .content h3 {
@@ -82,5 +84,14 @@
 
   .page-privacy .main > time {
     padding-left: 10px;
+  }
+
+  .page-privacy .main > .content .sub {
+    padding-left: 10px;
+  }
+  
+  .page-privacy .main > .content ul {
+    margin-left: 0;
+    padding-left: 20px;
   }
 }
