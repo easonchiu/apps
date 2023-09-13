@@ -8,17 +8,7 @@
 <body class="page-games">
   {{- template "app-header" . -}}
 
-  <div class="main">
-    <div class="banner">
-      {{- if eq .game "sudoku_crown" -}}
-      {{- template "game-sudoku-crown-banner" . -}}
-      {{- else if eq .game "block_cuties" -}}
-      {{- template "game-block-cuties-banner" . -}}
-      {{- else if eq .game "digit_merge" -}}
-      {{- template "game-digit-merge-banner" . -}}
-      {{- end -}}
-    </div>
-
+  <main class="main">
     <div class="content">
       <div class="app-info">
         {{- if eq .game "sudoku_crown" -}}
@@ -50,7 +40,15 @@
         {{- end -}}
       </article>
     </div>
-  </div>
+  </main>
+
+  {{- if eq .game "sudoku_crown" -}}
+  {{- template "game-sudoku-crown-download" . -}}
+  {{- else if eq .game "block_cuties" -}}
+  {{- template "game-block-cuties-download" . -}}
+  {{- else if eq .game "digit_merge" -}}
+  {{- template "game-digit-merge-download" . -}}
+  {{- end -}}
 
   {{- template "app-footer" . -}}
 </body>

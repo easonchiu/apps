@@ -1,4 +1,4 @@
-## YSGame Studios 官网
+## YSGame Studio 官网
 
 ### 启动
 air

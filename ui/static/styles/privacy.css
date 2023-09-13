@@ -22,7 +22,6 @@
   border-radius: var(--container-border-radius);
   background-color: var(--container-color);
   padding: var(--container-padding);
-  overflow: hidden;
 }
 
 .page-privacy .main > .content h2 {
