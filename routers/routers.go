@@ -22,5 +22,8 @@ func RegisterRouters(g *gin.Engine) {
 	group.GET("/news", ctl.PageNews)
 	group.GET("/privacy", ctl.PagePrivacy)
 	group.GET("/contact", ctl.PageContact)
+
+	group.GET("/robots.txt", ctl.PageRobots)
+	group.GET("/sitemap.xml", ctl.PageSitemap)
 	g.NoRoute(ctl.PageNoFound)
 }
