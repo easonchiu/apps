@@ -39,8 +39,3 @@ func (r *resource) Open(name string) (fs.File, error) {
 func StaticFS() http.FileSystem {
 	return http.FS(&resource{prefix: "static", fs: embedFS})
 }
-
-// unescapeHTML unescape HTML content
-// func unescapeHTML(x string) template.HTML {
-// 	return template.HTML(x)
-// }

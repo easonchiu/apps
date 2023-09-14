@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	g := gin.New()
 	gin.SetMode(gin.ReleaseMode)
+	g := gin.New()
 	routers.RegisterRouters(g)
 	g.Run(":9090")
 }

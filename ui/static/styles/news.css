@@ -1,7 +1,6 @@
 .page-news .main > h1 {
   color: var(--title-color);
   font-size: var(--h1-font-size);
-  font-family: var(--bold-font);
   margin: 0;
   padding-left: 15px;
   margin-bottom: var(--margin-big);
