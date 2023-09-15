@@ -10,12 +10,7 @@
     <p>Challenge Your Brain with Sudoku Game!</p>
   </div>
 
-  <div class="download">
-    <a href="https://apps.apple.com/us/app/sudoku-crown/id6450429527" alt="Sudoku Crown" target="_blank" class="download-ios">
-      <span>Download on the</span>
-      <strong>App Store</strong>
-    </a>
-  </div>
+  {{- template "game-sudoku-crown-download" "download" -}}
 {{- end -}}
 
 {{- define "game-sudoku-crown-interface" -}}
@@ -32,16 +27,15 @@
   <p>Our Sudoku game also includes special features such as note-taking, auto-check, and hints, which can help you solve puzzles more easily. In addition, our Sudoku game offers beautiful interfaces and sound effects, bringing you a brand new gaming experience.</p>
   <p>Download our Sudoku game and challenge your brain now! It's available for free on the App Store!</p>
 
-  <div class="download">
-    <a href="https://apps.apple.com/us/app/sudoku-crown/id6450429527" alt="Sudoku Crown" target="_blank" class="download-ios">
-      <span>Download on the</span>
-      <strong>App Store</strong>
-    </a>
-  </div>
+  {{- template "game-sudoku-crown-download" "download" -}}
 {{- end -}}
 
 {{- define "game-sudoku-crown-download" -}}
+  {{if .}}
+  <div class="{{ . }}">
+  {{ else }}
   <div class="download-bar">
+  {{ end }}
     <a href="https://apps.apple.com/us/app/sudoku-crown/id6450429527" alt="Sudoku Crown" target="_blank" class="download-ios">
       <span>Download on the</span>
       <strong>App Store</strong>

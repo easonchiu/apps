@@ -1,32 +1,13 @@
 // todo: Join the LOGISK community! Follow us on any of the following platforms to get updates about our games.
 
 {{- define "app-footer" -}}
-
-
-
   <footer class="app-footer">
     <nav>
       <ul>
-        {{- if eq .active "games" -}}
-        <li><a href="/" class="active">GAMES</a></li>
-        {{- else -}}
         <li><a href="/">GAMES</a></li>
-        {{- end -}}
-        {{- if eq .active "news" -}}
-        <!-- <li><a href="/news" class="active">NEWS</a></li> -->
-        {{- else -}}
         <!-- <li><a href="/news">NEWS</a></li> -->
-        {{- end -}}
-        {{- if eq .active "privacy_policy" -}}
-        <li><a href="/privacy" class="active">PRIVACY POLICY</a></li>
-        {{- else -}}
         <li><a href="/privacy">PRIVACY POLICY</a></li>
-        {{- end -}}
-        {{- if eq .active "contact" -}}
-        <li><a href="/contact" class="active">CONTACT</a></li>
-        {{- else -}}
         <li><a href="/contact">CONTACT</a></li>
-        {{- end -}}
       </ul>
     </nav>
     

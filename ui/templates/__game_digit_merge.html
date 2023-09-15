@@ -10,12 +10,7 @@
     <p>Merge Gears and Balls, Challenge Your Number Intelligence!</p>
   </div>
 
-  <div class="download">
-    <a href="https://apps.apple.com/us/app/digit-merge/id6448780577" alt="Digit Merge!" target="_blank" class="download-ios">
-      <span>Download on the</span>
-      <strong>App Store</strong>
-    </a>
-  </div>
+  {{ template "game-digit-merge-download" "download" }}
 {{- end -}}
 
 {{- define "game-digit-merge-interface" -}}
@@ -32,16 +27,15 @@
   <p>The game is easy to play and offers a simple gameplay experience. You need to merge larger starting numbers and then let them collide to obtain the final number, which will be your score. Each merge can bring surprises and challenge your number intelligence.</p>
   <p>If you're a fan of number games, then this game is a must-try. Download it now and challenge your number intelligence!</p>
 
-  <div class="download">
-    <a href="https://apps.apple.com/us/app/digit-merge/id6448780577" alt="Digit Merge!" target="_blank" class="download-ios">
-      <span>Download on the</span>
-      <strong>App Store</strong>
-    </a>
-  </div>
+  {{ template "game-digit-merge-download" "download" }}
 {{- end -}}
 
 {{- define "game-digit-merge-download" -}}
+  {{if .}}
+  <div class="{{ . }}">
+  {{ else }}
   <div class="download-bar">
+  {{ end }}
     <a href="https://apps.apple.com/us/app/digit-merge/id6448780577" alt="Digit Merge!" target="_blank" class="download-ios">
       <span>Download on the</span>
       <strong>App Store</strong>

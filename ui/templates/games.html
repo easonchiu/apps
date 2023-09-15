@@ -12,44 +12,44 @@
     <div class="content">
       <div class="app-info">
         {{- if eq .game "sudoku_crown" -}}
-        {{- template "game-sudoku-crown-info" . -}}
+        {{- template "game-sudoku-crown-info" -}}
         {{- else if eq .game "block_cuties" -}}
-        {{- template "game-block-cuties-info" . -}}
+        {{- template "game-block-cuties-info" -}}
         {{- else if eq .game "digit_merge" -}}
-        {{- template "game-digit-merge-info" . -}}
+        {{- template "game-digit-merge-info" -}}
         {{- end -}}
       </div>
 
       <div class="app-interface">
         {{- if eq .game "sudoku_crown" -}}
-        {{- template "game-sudoku-crown-interface" . -}}
+        {{- template "game-sudoku-crown-interface" -}}
         {{- else if eq .game "block_cuties" -}}
-        {{- template "game-block-cuties-interface" . -}}
+        {{- template "game-block-cuties-interface" -}}
         {{- else if eq .game "digit_merge" -}}
-        {{- template "game-digit-merge-interface" . -}}
+        {{- template "game-digit-merge-interface" -}}
         {{- end -}}
       </div>
 
       <article>
         {{- if eq .game "sudoku_crown" -}}
-        {{- template "game-sudoku-crown-content" . -}}
+        {{- template "game-sudoku-crown-content" -}}
         {{- else if eq .game "block_cuties" -}}
-        {{- template "game-block-cuties-content" . -}}
+        {{- template "game-block-cuties-content" -}}
         {{- else if eq .game "digit_merge" -}}
-        {{- template "game-digit-merge-content" . -}}
+        {{- template "game-digit-merge-content" -}}
         {{- end -}}
       </article>
     </div>
   </main>
 
   {{- if eq .game "sudoku_crown" -}}
-  {{- template "game-sudoku-crown-download" . -}}
+  {{- template "game-sudoku-crown-download" -}}
   {{- else if eq .game "block_cuties" -}}
-  {{- template "game-block-cuties-download" . -}}
+  {{- template "game-block-cuties-download" -}}
   {{- else if eq .game "digit_merge" -}}
-  {{- template "game-digit-merge-download" . -}}
+  {{- template "game-digit-merge-download" -}}
   {{- end -}}
 
-  {{- template "app-footer" . -}}
+  {{- template "app-footer" -}}
 </body>
 </html>

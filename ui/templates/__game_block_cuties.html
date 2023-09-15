@@ -10,12 +10,7 @@
     <p>An Addictive Block Blast Game! Experience Endless Fun with Block Cuties!</p>
   </div>
 
-  <div class="download">
-    <a href="https://apps.apple.com/us/app/block-cuties/id6459511367" alt="Block Cuties" target="_blank" class="download-ios">
-      <span>Download on the</span>
-      <strong>App Store</strong>
-    </a>
-  </div>
+  {{ template "game-block-cuties-download" "download" }}
 {{- end -}}
 
 {{- define "game-block-cuties-interface" -}}
@@ -29,16 +24,15 @@
 {{- define "game-block-cuties-content" -}}
   <p>The perfect fusion of blocks and match-3 games! Simple controls, delightful sound effects, adorable visuals, all come together to bring you a relaxing and enjoyable gaming experience! Block Cuties will keep you hooked!</p>
 
-  <div class="download">
-    <a href="https://apps.apple.com/us/app/block-cuties/id6459511367" alt="Block Cuties" target="_blank" class="download-ios">
-      <span>Download on the</span>
-      <strong>App Store</strong>
-    </a>
-  </div>
+  {{ template "game-block-cuties-download" "download" }}
 {{- end -}}
 
 {{- define "game-block-cuties-download" -}}
+  {{if .}}
+  <div class="{{ . }}">
+  {{ else }}
   <div class="download-bar">
+  {{ end }}
     <a href="https://apps.apple.com/us/app/block-cuties/id6459511367" alt="Block Cuties" target="_blank" class="download-ios">
       <span>Download on the</span>
       <strong>App Store</strong>
