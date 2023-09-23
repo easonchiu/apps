@@ -10,6 +10,17 @@
 
   <main class="main">
     <div class="games">
+
+      <div class="game">
+        <a class="banner" href="/games/digit-merge">
+          {{- template "game-digit-merge-interface" -}}  
+        </a>
+        <div class="info">
+          {{- template "game-digit-merge-info" -}}
+        </div>
+        {{- template "game-digit-merge-download" -}}
+      </div>
+
       <div class="game">
         <a class="banner" href="/games/sudoku-crown">
           {{- template "game-sudoku-crown-interface" -}}  
@@ -29,16 +40,7 @@
         </div>
         {{- template "game-block-cuties-download" -}}
       </div>
-
-      <div class="game">
-        <a class="banner" href="/games/digit-merge">
-          {{- template "game-digit-merge-interface" -}}  
-        </a>
-        <div class="info">
-          {{- template "game-digit-merge-info" -}}
-        </div>
-        {{- template "game-digit-merge-download" -}}
-      </div>
+      
     </div>
   </main>
 
