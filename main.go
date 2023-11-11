@@ -10,5 +10,5 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	g := gin.New()
 	routers.RegisterRouters(g)
-	g.Run(":9090")
+	g.Run(":8000")
 }
