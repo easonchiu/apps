@@ -25,6 +25,7 @@ func RegisterRouters(g *gin.Engine) {
 
 	group.GET("/robots.txt", ctl.PageRobots)
 	group.GET("/sitemap.xml", ctl.PageSitemap)
+	group.GET("/app-ads.txt", ctl.PageAppADs)
 
 	g.NoRoute(ctl.PageNoFound)
 }
