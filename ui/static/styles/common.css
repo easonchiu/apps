@@ -176,6 +176,14 @@ body .main {
   opacity: 0.5;
 }
 
+.app-footer .icp {
+  text-align: center;
+  display: block;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  opacity: 0.5;
+}
+
 /* 404 page */
 .page-404 {
   display: block;
