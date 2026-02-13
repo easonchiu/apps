@@ -1,0 +1,39 @@
+.app-footer {
+  display: block;
+  padding-bottom: 50px;
+}
+
+.app-footer nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.app-footer nav li {
+  padding: 0 20px;
+}
+
+.app-footer nav li a {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+.app-footer nav li a:hover {
+  color: var(--title-color);
+}
+
+.app-footer p {
+  text-align: center;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
+
+@media (max-width: 800px) {
+  .app-footer nav li {
+    padding: 0 10px;
+  }
+}

@@ -1,29 +1,101 @@
 package routers
 
 import (
-	"ysgame/controllers"
+	"io"
+	"strconv"
+	"strings"
 	"ysgame/ui"
 
 	"github.com/gin-gonic/gin"
 )
 
 func RegisterRouters(g *gin.Engine) {
-	g.SetHTMLTemplate(ui.GetTemplate())
+	// Handle robots.txt
+	g.GET("/robots.txt", func(c *gin.Context) {
+		c.String(200, "Sitemap: https://www.ysgamestudio.com/sitemap.xml")
+	})
 
-	g.StaticFS("/static", ui.StaticFS())
+	// Handle sitemap.xml
+	g.GET("/sitemap.xml", func(c *gin.Context) {
+		c.Header("Content-Type", "application/xml")
+		sitemap := `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.ysgamestudio.com</loc>
+    </url>
+    <url>
+        <loc>https://www.ysgamestudio.com/games/sudoku-crown</loc>
+    </url>
+    <url>
+        <loc>https://www.ysgamestudio.com/games/digit-merge</loc>
+    </url>
+    <url>
+        <loc>https://www.ysgamestudio.com/games/block-cuties</loc>
+    </url>
+    <url>
+        <loc>https://www.ysgamestudio.com/privacy</loc>
+    </url>
+    <url>
+        <loc>https://www.ysgamestudio.com/contact</loc>
+    </url>
+</urlset>`
+		c.String(200, sitemap)
+	})
 
-	ctl := new(controllers.Controller)
+	// Get the embedded file system
+	distFS := ui.GetDistFS()
 
-	group := g.Group("")
-	group.GET("/", ctl.PageHomepage)
-	group.GET("/games/sudoku-crown", ctl.PageSudokuCrown)
-	group.GET("/games/block-cuties", ctl.PageBlockCuties)
-	group.GET("/games/digit-merge", ctl.PageDigitMerge)
-	group.GET("/news", ctl.PageNews)
-	group.GET("/privacy", ctl.PagePrivacy)
-	group.GET("/contact", ctl.PageContact)
+	// Helper function to serve a file from the embedded FS
+	serveFile := func(c *gin.Context, filename string) bool {
+		file, err := distFS.Open(filename)
+		if err != nil {
+			return false
+		}
+		defer file.Close()
 
-	group.GET("/robots.txt", ctl.PageRobots)
-	group.GET("/sitemap.xml", ctl.PageSitemap)
-	g.NoRoute(ctl.PageNoFound)
+		stat, err := file.Stat()
+		if err != nil {
+			return false
+		}
+
+		// Determine content type
+		contentType := "application/octet-stream"
+		if strings.HasSuffix(filename, ".html") {
+			contentType = "text/html; charset=utf-8"
+		} else if strings.HasSuffix(filename, ".js") {
+			contentType = "application/javascript"
+		} else if strings.HasSuffix(filename, ".css") {
+			contentType = "text/css"
+		} else if strings.HasSuffix(filename, ".svg") {
+			contentType = "image/svg+xml"
+		} else if strings.HasSuffix(filename, ".png") {
+			contentType = "image/png"
+		} else if strings.HasSuffix(filename, ".ico") {
+			contentType = "image/x-icon"
+		}
+
+		c.Header("Content-Type", contentType)
+		c.Header("Content-Length", strconv.FormatInt(stat.Size(), 10))
+		c.Status(200)
+		io.Copy(c.Writer, file)
+		return true
+	}
+
+	// Serve all requests
+	g.NoRoute(func(c *gin.Context) {
+		path := strings.TrimPrefix(c.Request.URL.Path, "/")
+		if path == "" {
+			path = "index.html"
+		}
+
+		// Try to serve the requested file
+		if serveFile(c, path) {
+			return
+		}
+
+		// File doesn't exist, serve index.html for SPA routing
+		if !serveFile(c, "index.html") {
+			c.String(500, "Error loading application")
+		}
+	})
 }

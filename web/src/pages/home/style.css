@@ -1,0 +1,153 @@
+.page-home {
+  display: block;
+}
+
+.page-home .game {
+  border-radius: var(--container-border-radius);
+  background-color: var(--container-color);
+  margin-bottom: var(--margin-big);
+  overflow: hidden;
+}
+
+.page-home .game:last-child {
+  margin-bottom: 0;
+}
+
+.page-home .game .banner {
+  height: 300px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.page-home .game .banner .list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--container-padding);
+}
+
+.page-home .game .banner .list img {
+  display: block;
+  width: 240px;
+  margin: 0 20px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page-home .game .info {
+  padding: var(--container-padding);
+  display: flex;
+  align-items: center;
+}
+
+.page-home .game .info .app-icon {
+  display: block;
+  width: 66px;
+  height: 66px;
+  border-radius: 12px;
+  background: #000;
+  margin-right: 20px;
+}
+
+.page-home .game .info .app-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-home .game .info .data {
+  flex: 1;
+}
+
+.page-home .game .info .data h1 {
+  display: block;
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  margin: 0;
+}
+
+.page-home .game .info .data p {
+  display: block;
+  color: var(--text-color);
+  font-size: var(--text-font-size);
+  margin: 0;
+}
+
+.page-home .game .info .download {
+  display: flex;
+  align-items: center;
+}
+
+.page-home .game .download-bar {
+  padding: var(--container-padding);
+  padding-top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .page-home .game .banner .list img {
+    display: none;
+    margin: 0 10px;
+    width: 28%;
+    height: auto;
+  }
+
+  .page-home .game .banner .list img:nth-child(1) {
+    display: block;
+  }
+
+  .page-home .game .banner .list img:nth-child(2) {
+    display: block;
+  }
+
+  .page-home .game .banner .list img:nth-child(3) {
+    display: block;
+  }
+
+  .page-home .game .info {
+    align-items: flex-start;
+  }
+
+  .page-home .game .info .app-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+    border-radius: 10px;
+  }
+
+  .page-home .game .info .data p {
+    line-height: 1.2;
+    font-size: 14px;
+  }
+
+  .page-home .game .info .download {
+    display: none;
+  }
+
+  .page-home .game .download-bar {
+    display: flex;
+  }
+}
+
+@media (max-width: 440px) {
+  .page-home .game .banner {
+    height: auto;
+  }
+
+  .page-home .game .banner .list {
+    padding: var(--container-padding) 0;
+  }
+
+  .page-home .game .banner .list img {
+    width: 40%;
+    border-radius: 10px;
+  }
+
+  .page-home .game .banner .list img:nth-child(3) {
+    display: none;
+  }
+}

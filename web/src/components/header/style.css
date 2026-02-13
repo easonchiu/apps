@@ -1,0 +1,120 @@
+.app-header {
+  height: 90px;
+  background-color: rgba(40, 40, 40, 0.95);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--container-border-color);
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.app-header .inner {
+  width: var(--main-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.app-header .inner .logo {
+  display: block;
+  width: 137px;
+  height: 37px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARIAAABKCAMAAABAQys/AAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAzGAg3/CAv0ARcI+wn6DPUDBmQZkPUHlW6QAABTZJREFUeNrtmtm2oyAQRQnFqDilu/n/T+3BEMRTGJOsfpL9dm8I4qYoSqJofAyJRklvRGOLt7EpKSAVm5ICqWNTUmBibEq2+CE2Jfs00pQUOB2bkoIuxqakoI9NSQFNsSkpWFRsSqA+29KJq2PiDimujQ9xjxOX4X5n6zNgEZfhfuuY+gwR1+F+u40E9RlgxXX4o+QWNk78Wp9dObveb3+RRX2GqCsdva5KbvdnfXb5IElKbj8p12fAIK7EqmRNKCbyTF68xA22DCVvwkBQ8Mg+WGuDcQc9dcPfNsO+DfS+1D8LUgDUh34/oEUWzFQouVn7hRH613A7LhVj1OU33eYKevWF49bQhmM6eMgY02dYbCkPNXqJK5TcdGQJ/vQDQL8bV5TYBp8kj7a7vnq5ZBzBz/KA5nIegeGMkl6coduV/RIfA3qckhdVcz0SVJaKsOMmZp+YIxBASXVIfhHIfp3kwCQFadlEwICRl5k9C6+HSVwhJkiihG4yKYrkoRLtUrliXqXXYm5GqGYoTYN0znWjYrb2ZETb3hgTJrgHaMmHCVdw/4hVJYPM/FM8oxKs0BYFFwf6rFl0eH25kySt6vjzCOOTxXF3Xzi7mleC61JVlaB0B0owsXYwH/Wlo0kI0riaA1yeTyR62fZJ9UwSdNkhKrEg8ZwSqisxef5RCbI8B5LzSsbi+sapr0vDRUB97XGUSd/qHSW/akr0o6m3yc/JXaczXHqz5SCR6fCJGwJueJhxB0rUTvdJJeInr0QtOZ6PlOBta/gCJlzEnw4SSipsxSFsl6TeU3JnlVjKp9KnlZDeKOVDKNrO+YMdC5QhY+q+Fibr9dMmnRK3rikx7gk9Vo5llPRQTJjTBVvKsiV+0/s0SOJTic56Vxjv+db+dRl4JZ1eR/38xnymLpl3YaKhPhve/R1nLHs4uP4kOZsq/aWL9QuX0D5PGLFKpFnbpW8MdEaJ3WWT5zCe9Vl8V4lX9ZpTqqNjKVMo0cUgca8eNpFneCXrUPoUJHRKyZSuEgol02OoTn3wa5/LywagMfcIJYisKFFssBFEDChJe7UIq5pTSozITrKSMddnHyih4j4AZyykYC6XmKINlGm2qFAMqyTtSPMakXUlwTxxQpROdFmflcgPlSDLPCosuZdyxyHn3Mx0JR/5+YFOYYJKkrBU5PJK6nf2q1+V6PkxIhv/k5Jib+9hR+r2fSkIEqTjlYgxh9opJVie6O1j3h73vRLcYALUeQqUQC2PKF5JrpPkR0qEvGnrn3MILN8rwTQcsKYxqAS8AY5TklOSFZ8pEdTl3AZo8aUS6nuCo4SeqeXMgRKKPJZTkvukt5XgW51IeF8JJgErfRkSM1vyu8dAML2Oa8DShvVfDpXkmx7EF0rqP/fJL5W4VAvZYRiCZnNAyLP+B4VtKIUEZBeLSp7RqOhYyWQzsn6QgwnsSyX0OgUIz83GJPDU/8WpQ9FqWYSoKwFMxQjivlUixhOR58fj42jF9T1DVuI7p9Mn9Oy2j+5OoyGOa4847kUjfBDijxbVXolmJ9Hjv71+/RNN/7UR0aVHHGQenytD21nwyKBzo95B3xP76qUmaAYYfBxd9kvVEsTW20YQmmcvang3yz8s/rDid+n3WezbsVeU/mUz/Pd7px3tjde8CBF9qVdLsHZA1IXeZGQzIzBd6YUsBsNsSRdnjLG9N18SYoG+0DviNex13+s8pSR40RC21WegpNVnoKTVZ6Ck1WegpNVnoKTVZ6Ck1WegpNVnqGRs9VmJbfXZnlaNNHh+A5M7DKGwiamEAAAAAElFTkSuQmCC');
+  background-size: 100% 100%;
+}
+
+.app-header .inner nav {
+  margin-left: 120px;
+}
+
+.app-header .inner nav ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app-header .inner nav li {
+  display: block;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.app-header .inner nav li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 20px;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.app-header .inner nav li a:hover {
+  color: var(--title-color);
+}
+
+.app-header .inner nav li a.active {
+  background-color: var(--container-hover-color);
+  color: var(--title-color);
+}
+
+.app-header .inner .home {
+  display: none;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  text-decoration: none;
+  margin: 0 10px 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header .inner .home svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-top: -2px;
+}
+
+@media (max-width: 800px) {
+  .app-header {
+    height: 60px;
+  }
+
+  .app-header .inner {
+    width: auto;
+    padding: 0 10px;
+  }
+
+  .app-header .inner .logo {
+    scale: 0.8;
+  }
+
+  .app-header .inner nav {
+    margin-left: auto;
+  }
+
+  .app-header .inner nav li a {
+    padding: 0 5px;
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .app-header .inner nav {
+    display: none;
+  }
+
+  .app-header .inner .home {
+    display: flex;
+  }
+}

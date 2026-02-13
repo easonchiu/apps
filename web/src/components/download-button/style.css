@@ -1,0 +1,37 @@
+.download-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  background-color: #212121;
+  border-radius: 10px;
+  border: 1px solid #0E0E0E;
+  box-shadow: 0 0 0 1px #343434 inset;
+  text-decoration: none;
+  padding: 0 20px 0 55px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMAIBDv34C/QGAwoHBf3pBQr8+PFmWBIAAAAahJREFUaN7t2N1qIzEMBeAj/8n2zM600fu/67JkU1HSUle2oIX57sKQg5GVyB5cLr8bVYKPkIuIMDxsUf7JWI+KiFc4R/nvxGq7vCEs1jQ7YTFKGt6xWBe/qrCogsWK48JJ1IHFNsdWQdFswmrRMTv4Zet+5oD1QhSReNCqtZ61nk0/HgeHtw9c7w8tQu2PDSw7ffoslj18Ozo/vv2cz4/kR34nyyB7n78xEZ1HlGfZMMiGjXdnSyJe6S2KRQpjw8ZmG2gTa7bs+NJNjPJAURyzURyz2TEbXUxex8aBDWFAFZMbRrw4LhxJLF7gWPId8GvEBsf9xJAsFukKnwo3CRhRf2ArboOXTJMy/fOfL3o0zyG/CRoJAw5xrPopRpvDjipeX3QV29QfwHxlSOw6TdRlfvFZJsSBi6xZmjgXzZ8xWMz+TLX6/OGIHRauyvqFK3ZYuDqmztEevd4x6DQUhTCq23fT4Y6e8Q0U118VFTsUXFWPbE23ZdveRr0etRFR41zs2Yq0I2Pnjx/ILcCI76MjPb29pS3d31gyJgSuJ31cNa4t4HL5Ff4CFrTqEmMbsyoAAAAASUVORK5CYII=');
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  transition: all 0.25s ease-out;
+}
+
+.download-button:hover {
+  background-color: #252525;
+}
+
+.download-button span {
+  display: block;
+  color: #fff;
+  line-height: 1.2;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.download-button strong {
+  display: block;
+  color: #fff;
+  line-height: 1;
+  font-size: 18.5px;
+  white-space: nowrap;
+}

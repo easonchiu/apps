@@ -1,0 +1,19 @@
+/* 404 page styles are in common.css */
+.page-404 {
+  display: block;
+}
+
+.page-404 p {
+  padding: 200px 0;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.page-404 a {
+  color: var(--text-color);
+  transition: all 0.2s ease-out;
+}
+
+.page-404 a:hover {
+  color: var(--title-color);
+}
