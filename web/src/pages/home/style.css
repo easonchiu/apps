@@ -75,17 +75,8 @@
   margin: 0;
 }
 
-.page-home .game .info .download {
-  display: flex;
-  align-items: center;
-}
-
 .page-home .game .download-bar {
-  padding: var(--container-padding);
-  padding-top: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (max-width: 800px) {
@@ -94,6 +85,10 @@
     margin: 0 10px;
     width: 28%;
     height: auto;
+  }
+
+  .page-home .game {
+    padding-bottom: 20px;
   }
 
   .page-home .game .banner .list img:nth-child(1) {
@@ -130,6 +125,7 @@
 
   .page-home .game .download-bar {
     display: flex;
+    margin: 0 auto;
   }
 }
 

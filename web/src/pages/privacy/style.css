@@ -2,90 +2,94 @@
   display: block;
 }
 
-.page-privacy .main > h1 {
+.page-privacy .main>h1 {
   color: var(--title-color);
   font-size: var(--h1-font-size);
   margin: 0;
   padding-left: 15px;
 }
 
-.page-privacy .main > time {
+.page-privacy .main>time {
   color: var(--text-color);
   font-size: var(--small-font-size);
   display: block;
-  margin-bottom: var(--margin-big);
+  margin: 0 0 var(--margin-big) 0;
   padding-left: 15px;
 }
 
-.page-privacy .main > .content {
+.page-privacy .main>.content {
   border-radius: var(--container-border-radius);
   background-color: var(--container-color);
   padding: var(--container-padding);
 }
 
-.page-privacy .main > .content h2 {
+.page-privacy .main>.content h2 {
   color: var(--title-color);
   font-size: var(--h2-font-size);
   margin: 0;
 }
 
-.page-privacy .main > .content h2:not(:first-child) {
+.page-privacy .main>.content h2:not(:first-child) {
   padding-top: 10px;
 }
 
-.page-privacy .main > .content .sub {
+.page-privacy .main>.content .sub {
   padding-left: 20px;
   border-left: 2px solid rgba(255, 255, 255, 0.04);
 }
 
-.page-privacy .main > .content h3 {
+.page-privacy .main>.content h3 {
   color: var(--title-color);
   font-size: var(--h3-font-size);
   margin: 0;
 }
 
-.page-privacy .main > .content h4 {
+.page-privacy .main>.content h4 {
   color: var(--title-color);
   font-size: var(--text-font-size);
   margin: 0;
 }
 
-.page-privacy .main > .content p {
+.page-privacy .main>.content p {
   color: var(--text-color);
   font-size: var(--p-font-size);
   margin: 0 0 10px 0;
 }
 
-.page-privacy .main > .content a {
+.page-privacy .main>.content a {
   color: var(--text-color);
   font-size: var(--p-font-size);
   transition: all 0.2s ease-out;
 }
 
-.page-privacy .main > .content a:hover {
+.page-privacy .main>.content a:hover {
   color: var(--title-color);
 }
 
-.page-privacy .main > .content ul {
+.page-privacy .main>.content ul {
   color: var(--text-color);
   font-size: var(--p-font-size);
   margin: 0 0 10px 0;
 }
 
 @media (max-width: 800px) {
-  .page-privacy .main > h1 {
+  .page-privacy .main>h1 {
     padding-left: 10px;
   }
 
-  .page-privacy .main > time {
+  .page-privacy .main>time {
     padding-left: 10px;
   }
 
-  .page-privacy .main > .content .sub {
+  .page-privacy .main>.content {
+    padding: 20px;
+  }
+
+  .page-privacy .main>.content .sub {
     padding-left: 10px;
   }
-  
-  .page-privacy .main > .content ul {
+
+  .page-privacy .main>.content ul {
     margin-left: 0;
     padding-left: 20px;
   }

@@ -1,4 +1,4 @@
-.page-contact .main > h1 {
+.page-contact .main>h1 {
   color: var(--title-color);
   font-size: var(--h1-font-size);
   margin: 0;
@@ -6,29 +6,29 @@
   margin-bottom: var(--margin-big);
 }
 
-.page-contact .main > .content {
+.page-contact .main>.content {
   border-radius: var(--container-border-radius);
   background-color: var(--container-color);
   padding: var(--container-padding);
 }
 
-.page-contact .main > .content p {
+.page-contact .main>.content p {
   color: var(--text-color);
   font-size: var(--p-font-size);
   margin: 0 0 10px 0;
 }
 
-.page-contact .main > .content a {
+.page-contact .main>.content a {
   color: var(--text-color);
   font-size: var(--p-font-size);
   transition: all 0.2s ease-out;
 }
 
-.page-contact .main > .content a:hover {
+.page-contact .main>.content a:hover {
   color: var(--title-color);
 }
 
-.page-contact .main > .content ul {
+.page-contact .main>.content ul {
   color: var(--text-color);
   font-size: var(--p-font-size);
   margin: 0 0 10px 0;
@@ -36,7 +36,11 @@
 }
 
 @media (max-width: 800px) {
-  .page-contact .main > h1 {
+  .page-contact .main>h1 {
     padding-left: 10px;
+  }
+
+  .page-contact .main>.content {
+    padding: 20px;
   }
 }

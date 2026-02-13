@@ -15,5 +15,6 @@
     .app-container {
         width: auto;
         padding: var(--margin-big) 10px;
+        margin: 0;
     }
 }

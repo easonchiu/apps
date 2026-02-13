@@ -4,12 +4,18 @@ import (
 	"io"
 	"strconv"
 	"strings"
+	"ysgame/controllers"
 	"ysgame/ui"
 
 	"github.com/gin-gonic/gin"
 )
 
 func RegisterRouters(g *gin.Engine) {
+	// API routes
+	api := g.Group("/api")
+	{
+		api.POST("/feedback", controllers.SubmitFeedback)
+	}
 	// Handle robots.txt
 	g.GET("/robots.txt", func(c *gin.Context) {
 		c.String(200, "Sitemap: https://www.ysgamestudio.com/sitemap.xml")

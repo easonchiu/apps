@@ -52,6 +52,6 @@ body {
 @media (max-width: 800px) {
   .main {
     width: auto;
-    padding: var(--margin-big) 10px;
+    padding: 0;
   }
 }
