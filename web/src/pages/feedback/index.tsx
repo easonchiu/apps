@@ -19,7 +19,10 @@ export default function Feedback() {
     setMessage('');
 
     try {
-      const response = await fetch('/wwwapi/feedback', {
+      const urlParams = new URLSearchParams(window.location.search);
+      const app = urlParams.get('app') || '';
+
+      const response = await fetch(`/wwwapi/feedback?app=${encodeURIComponent(app)}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

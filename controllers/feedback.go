@@ -20,10 +20,13 @@ func SubmitFeedback(c *gin.Context) {
 		return
 	}
 
+	app := c.Query("app")
+
 	// Create feedback document
 	feedback := models.Feedback{
 		Email:     req.Email,
 		Content:   req.Content,
+		App:       app,
 		CreatedAt: time.Now(),
 	}
 
