@@ -4,7 +4,7 @@ import Home from './pages/home';
 import GameDetail from './pages/game-detail';
 import Privacy from './pages/privacy';
 import Contact from './pages/contact';
-import RateUs from './pages/rate-us';
+import Feedback from './pages/feedback';
 import NotFound from './pages/not-found';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route path="/games/:gameId" element={<GameDetail />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/rate-us" element={<RateUs />} />
+          <Route path="/feedback" element={<Feedback />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './style.css';
 
-export default function RateUs() {
+export default function Feedback() {
   const [email, setEmail] = useState('');
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
@@ -44,9 +44,9 @@ export default function RateUs() {
   };
 
   return (
-    <div className="page-rate-us">
+    <div className="page-feedback">
       <main className="main">
-        <h1>Rate Us</h1>
+        <h1>Feedback</h1>
         <p className="subtitle">We'd love to hear your feedback!</p>
 
         <div className="content">

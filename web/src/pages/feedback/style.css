@@ -1,21 +1,21 @@
-.page-rate-us {
+.page-feedback {
   display: block;
 }
 
-.page-rate-us .content {
+.page-feedback .content {
   border-radius: var(--container-border-radius);
   background-color: var(--container-color);
   padding: var(--container-padding);
 }
 
-.page-rate-us h1 {
+.page-feedback h1 {
   color: var(--title-color);
   font-size: var(--h1-font-size);
   margin: 0;
   padding-left: 15px;
 }
 
-.page-rate-us .subtitle {
+.page-feedback .subtitle {
   color: var(--text-color);
   font-size: var(--small-font-size);
   display: block;
@@ -23,26 +23,26 @@
   padding-left: 15px;
 }
 
-.page-rate-us form {
+.page-feedback form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.page-rate-us .form-group {
+.page-feedback .form-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.page-rate-us label {
+.page-feedback label {
   color: var(--title-color);
   font-size: var(--p-font-size);
   font-weight: 500;
 }
 
-.page-rate-us input,
-.page-rate-us textarea {
+.page-feedback input,
+.page-feedback textarea {
   padding: 12px 16px;
   background-color: var(--body-color);
   border: 1px solid var(--container-border-color);
@@ -53,25 +53,25 @@
   transition: all 0.2s ease-out;
 }
 
-.page-rate-us input:focus,
-.page-rate-us textarea:focus {
+.page-feedback input:focus,
+.page-feedback textarea:focus {
   outline: none;
   border-color: var(--title-color);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.page-rate-us input:disabled,
-.page-rate-us textarea:disabled {
+.page-feedback input:disabled,
+.page-feedback textarea:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.page-rate-us textarea {
+.page-feedback textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-.page-rate-us button {
+.page-feedback button {
   padding: 14px 32px;
   background-color: var(--title-color);
   color: var(--body-color);
@@ -83,41 +83,41 @@
   transition: all 0.2s ease-out;
 }
 
-.page-rate-us button:hover:not(:disabled) {
+.page-feedback button:hover:not(:disabled) {
   background-color: rgba(255, 255, 255, 0.9);
   transform: translateY(-1px);
 }
 
-.page-rate-us button:disabled {
+.page-feedback button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.page-rate-us .message {
+.page-feedback .message {
   padding: 12px 16px;
   border-radius: 8px;
   font-size: var(--small-font-size);
   text-align: center;
 }
 
-.page-rate-us .message.success {
+.page-feedback .message.success {
   background-color: rgba(46, 160, 67, 0.2);
   color: #4caf50;
   border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
-.page-rate-us .message.error {
+.page-feedback .message.error {
   background-color: rgba(211, 47, 47, 0.2);
   color: #f44336;
   border: 1px solid rgba(244, 67, 54, 0.3);
 }
 
 @media (max-width: 800px) {
-  .page-rate-us .content {
+  .page-feedback .content {
     padding: 15px;
   }
 
-  .page-rate-us h1 {
+  .page-feedback h1 {
     font-size: 28px;
   }
 }
