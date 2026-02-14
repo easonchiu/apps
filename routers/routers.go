@@ -12,41 +12,14 @@ import (
 
 func RegisterRouters(g *gin.Engine) {
 	// API routes
-	api := g.Group("/api")
+	api := g.Group("/wwwapi")
 	{
 		api.POST("/feedback", controllers.SubmitFeedback)
 	}
-	// Handle robots.txt
-	g.GET("/robots.txt", func(c *gin.Context) {
-		c.String(200, "Sitemap: https://www.ysgamestudio.com/sitemap.xml")
-	})
 
-	// Handle sitemap.xml
-	g.GET("/sitemap.xml", func(c *gin.Context) {
-		c.Header("Content-Type", "application/xml")
-		sitemap := `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://www.ysgamestudio.com</loc>
-    </url>
-    <url>
-        <loc>https://www.ysgamestudio.com/games/sudoku-crown</loc>
-    </url>
-    <url>
-        <loc>https://www.ysgamestudio.com/games/digit-merge</loc>
-    </url>
-    <url>
-        <loc>https://www.ysgamestudio.com/games/block-cuties</loc>
-    </url>
-    <url>
-        <loc>https://www.ysgamestudio.com/privacy</loc>
-    </url>
-    <url>
-        <loc>https://www.ysgamestudio.com/contact</loc>
-    </url>
-</urlset>`
-		c.String(200, sitemap)
-	})
+	g.GET("/robots.txt", controllers.ReturnRobotsTxt)
+	g.GET("/sitemap.xml", controllers.ReturnSitemap)
+	g.GET("/app-ads.txt", controllers.ReturnAppAds)
 
 	// Get the embedded file system
 	distFS := ui.GetDistFS()

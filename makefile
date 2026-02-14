@@ -17,15 +17,17 @@ dev: web-build
 	go run main.go
 
 # 生产构建（原有的构建命令，添加前端构建）
-build: web-build
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o ./ysgame -tags=jsoniter -trimpath -ldflags '-s -w'
+build:
+	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o ./run -tags=jsoniter -trimpath -ldflags '-s -w'
 
-# 部署到服务器（保留原有命令）
-push: build
-	ssh ys 'sudo systemctl stop ysgame'
-	scp ./ysgame ys:/usr/go
-	ssh ys 'sudo systemctl restart ysgame && sudo systemctl status ysgame'
-	rm -f ./ysgame
+docker: build
+	docker build --platform linux/amd64 --rm -t crpi-1q6uj003eu6yxxye.cn-shanghai.personal.cr.aliyuncs.com/yaoshang/www:latest .
+	docker push crpi-1q6uj003eu6yxxye.cn-shanghai.personal.cr.aliyuncs.com/yaoshang/www:latest
+	rm -rf ./run
+
+# 本地用 Docker 跑（需先 make docker 或已有镜像）。数据库环境变量示例：
+# docker run -p 8000:8000 -e MONGODB_URI=mongodb://host:27017 -e MONGODB_DATABASE=ysgame crpi-1q6uj003eu6yxxye.cn-shanghai.personal.cr.aliyuncs.com/yaoshang/www:latest
+# 或使用 env 文件：docker run -p 8000:8000 --env-file .env ...
 
 # 本地运行
 run:

@@ -19,7 +19,7 @@ export default function RateUs() {
     setMessage('');
 
     try {
-      const response = await fetch('/api/feedback', {
+      const response = await fetch('/wwwapi/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -22,5 +22,5 @@ func main() {
 	g.Use(gin.Logger())
 	g.Use(gin.Recovery())
 	routers.RegisterRouters(g)
-	g.Run(":9090")
+	g.Run(":8000")
 }

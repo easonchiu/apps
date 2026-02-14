@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="app-header">
       <div className="inner">
-        <Link to="/" className="logo"></Link>
+        <h1 className="logo" />
 
         <nav>
           <ul>

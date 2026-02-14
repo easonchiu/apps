@@ -26,7 +26,7 @@
 
 **提交反馈**
 ```
-POST /api/feedback
+POST /wwwapi/feedback
 Content-Type: application/json
 
 Request Body:
@@ -114,7 +114,7 @@ make start
 
 ```bash
 # 成功案例
-curl -X POST http://localhost:9090/api/feedback \
+curl -X POST http://localhost:9090/wwwapi/feedback \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","content":"Great app!"}'
 
@@ -131,7 +131,7 @@ curl -X POST http://localhost:9090/api/feedback \
 
 ## 注意事项
 
-1. **MongoDB 连接**: 如果 MongoDB 未运行，应用仍会启动，但会在日志中显示警告，且 `/api/feedback` 接口会返回 500 错误。
+1. **MongoDB 连接**: 如果 MongoDB 未运行，应用仍会启动，但会在日志中显示警告，且 `/wwwapi/feedback` 接口会返回 500 错误。
 
 2. **数据验证**: 
    - Email 必须是有效的邮箱格式
