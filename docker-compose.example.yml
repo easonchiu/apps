@@ -1,6 +1,9 @@
 # 部署示例：复制为 docker-compose.yml 并填写真实环境变量
 # 方式一：在下方 environment 里直接写（不推荐把密码提交到仓库）
 # 方式二：使用 env_file 指向 .env 文件（.env 不要提交到 git）
+#
+# 若 Go 程序读不到 env：确认 docker-compose.yml 与 .env 在同一目录；
+# 启动后看日志是否有 [MongoDB] MONGODB_URI from env / MONGODB_DATABASE from env。
 version: "3"
 services:
   app:
