@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './style.css';
 
@@ -27,11 +27,28 @@ export default function AdminFeedbacks() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [filterApp, setFilterApp] = useState('');
+  const [debouncedApp, setDebouncedApp] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navigate = useNavigate();
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
   const isAllSelected = feedbacks.length > 0 && feedbacks.every((fb) => selectedIds.has(fb.id));
+
+  const handleAppChange = (value: string) => {
+    setFilterApp(value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      setDebouncedApp(value);
+      setPage(1);
+    }, 400);
+  };
+
+  useEffect(() => {
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
+  }, []);
 
   const logout = useCallback(() => {
     localStorage.removeItem('admin_token');
@@ -49,8 +66,12 @@ export default function AdminFeedbacks() {
     setError('');
 
     try {
+      const params = new URLSearchParams({ page: String(p), pageSize: String(PAGE_SIZE) });
+      if (debouncedApp) params.set('app', debouncedApp);
+      if (filterStatus) params.set('status', filterStatus);
+
       const response = await fetch(
-        `/wwwapi/admin/feedbacks?page=${p}&pageSize=${PAGE_SIZE}`,
+        `/wwwapi/admin/feedbacks?${params}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -71,7 +92,7 @@ export default function AdminFeedbacks() {
     } finally {
       setLoading(false);
     }
-  }, [navigate, logout]);
+  }, [navigate, logout, debouncedApp, filterStatus]);
 
   useEffect(() => {
     const token = localStorage.getItem('admin_token');
@@ -182,6 +203,25 @@ export default function AdminFeedbacks() {
         <button className="logout-btn" onClick={logout}>
           Logout
         </button>
+      </div>
+
+      <div className="filter-bar">
+        <input
+          type="text"
+          className="filter-input"
+          placeholder="Filter by App..."
+          value={filterApp}
+          onChange={(e) => handleAppChange(e.target.value)}
+        />
+        <select
+          className="filter-select"
+          value={filterStatus}
+          onChange={(e) => { setFilterStatus(e.target.value); setPage(1); }}
+        >
+          <option value="">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="processed">Processed</option>
+        </select>
       </div>
 
       {selectedIds.size > 0 && (

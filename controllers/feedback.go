@@ -64,12 +64,21 @@ func ListFeedback(c *gin.Context) {
 		pageSize = 20
 	}
 
+	// Build filter from query params
+	filter := bson.M{}
+	if app := c.Query("app"); app != "" {
+		filter["app"] = bson.M{"$regex": app, "$options": "i"}
+	}
+	if status := c.Query("status"); status != "" {
+		filter["status"] = status
+	}
+
 	collection := db.GetCollection("feedbacks")
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
 	// Count total documents
-	total, err := collection.CountDocuments(ctx, bson.M{})
+	total, err := collection.CountDocuments(ctx, filter)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to count feedbacks"})
 		return
@@ -83,7 +92,7 @@ func ListFeedback(c *gin.Context) {
 		SetSkip(skip).
 		SetLimit(limit)
 
-	cursor, err := collection.Find(ctx, bson.M{}, opts)
+	cursor, err := collection.Find(ctx, filter, opts)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to query feedbacks"})
 		return
