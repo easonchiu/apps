@@ -27,24 +27,25 @@
   background-size: 100% 100%;
 }
 
-.app-header .inner nav {
+/* Desktop nav */
+.app-header .inner .desktop-nav {
   margin-left: 120px;
 }
 
-.app-header .inner nav ul {
+.app-header .inner .desktop-nav ul {
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
 }
 
-.app-header .inner nav li {
+.app-header .inner .desktop-nav li {
   display: block;
   height: 40px;
   margin-right: 10px;
 }
 
-.app-header .inner nav li a {
+.app-header .inner .desktop-nav li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,31 +59,68 @@
   cursor: pointer;
 }
 
-.app-header .inner nav li a:hover {
+.app-header .inner .desktop-nav li a:hover {
   color: var(--title-color);
 }
 
-.app-header .inner nav li a.active {
+.app-header .inner .desktop-nav li a.active {
   background-color: var(--container-hover-color);
   color: var(--title-color);
 }
 
-.app-header .inner .home {
+/* Hamburger button — hidden on desktop */
+.app-header .hamburger {
   display: none;
-  color: var(--title-color);
-  font-size: var(--small-font-size);
-  text-decoration: none;
-  margin: 0 10px 0 auto;
-  align-items: center;
-  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
 }
 
-.app-header .inner .home svg {
+.app-header .hamburger span {
   display: block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  margin-top: -2px;
+  position: absolute;
+  left: 6px;
+  width: 24px;
+  height: 2px;
+  background-color: var(--title-color);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.app-header .hamburger span:nth-child(1) {
+  top: 9px;
+}
+
+.app-header .hamburger span:nth-child(2) {
+  top: 17px;
+}
+
+.app-header .hamburger span:nth-child(3) {
+  top: 25px;
+}
+
+/* Hamburger → X animation */
+.app-header .hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.app-header .hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.app-header .hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile dropdown — hidden on desktop */
+.app-header .mobile-dropdown {
+  display: none;
 }
 
 @media (max-width: 800px) {
@@ -92,29 +130,73 @@
 
   .app-header .inner {
     width: auto;
-    padding: 0 10px;
+    padding: 0 16px;
   }
 
   .app-header .inner .logo {
     scale: 0.8;
   }
 
-  .app-header .inner nav {
-    margin-left: auto;
-  }
-
-  .app-header .inner nav li a {
-    padding: 0 5px;
-    background-color: rgba(0, 0, 0, 0) !important;
-  }
-}
-
-@media (max-width: 440px) {
-  .app-header .inner nav {
+  /* Hide desktop nav on mobile */
+  .app-header .inner .desktop-nav {
     display: none;
   }
 
-  .app-header .inner .home {
-    display: flex;
+  /* Show hamburger on mobile */
+  .app-header .hamburger {
+    display: block;
+  }
+
+  /* Mobile dropdown */
+  .app-header .mobile-dropdown {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(40, 40, 40, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--container-border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    z-index: 100;
+  }
+
+  .app-header .mobile-dropdown.open {
+    max-height: 280px;
+    opacity: 1;
+  }
+
+  .app-header .mobile-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+  }
+
+  .app-header .mobile-dropdown li {
+    display: block;
+  }
+
+  .app-header .mobile-dropdown li a {
+    display: block;
+    padding: 14px 24px;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    text-decoration: none;
+    transition: color 0.25s ease, background-color 0.25s ease;
+    letter-spacing: 0.5px;
+  }
+
+  .app-header .mobile-dropdown li a:hover {
+    color: var(--title-color);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .app-header .mobile-dropdown li a.active {
+    color: var(--title-color);
+    background-color: var(--container-hover-color);
   }
 }

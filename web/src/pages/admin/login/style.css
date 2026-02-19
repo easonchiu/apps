@@ -1,0 +1,114 @@
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body-color);
+  padding: 20px;
+}
+
+.admin-login .login-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--container-color);
+  border: 1px solid var(--container-border-color);
+  border-radius: var(--container-border-radius);
+  padding: var(--container-padding);
+}
+
+.admin-login .login-header {
+  margin-bottom: var(--margin-big);
+  text-align: center;
+}
+
+.admin-login .login-header h1 {
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.admin-login .login-header p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  margin: 0;
+}
+
+.admin-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-login .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-login label {
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+}
+
+.admin-login input {
+  padding: 12px 16px;
+  background-color: var(--body-color);
+  border: 1px solid var(--container-border-color);
+  border-radius: 8px;
+  color: var(--title-color);
+  font-size: var(--p-font-size);
+  font-family: inherit;
+  transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.admin-login input:focus {
+  outline: none;
+  border-color: var(--title-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.admin-login input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-login .login-btn {
+  padding: 14px 32px;
+  background-color: var(--title-color);
+  color: var(--body-color);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--p-font-size);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  margin-top: 4px;
+}
+
+.admin-login .login-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.admin-login .login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-login .error-msg {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: var(--small-font-size);
+  text-align: center;
+  background-color: rgba(211, 47, 47, 0.2);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+@media (max-width: 800px) {
+  .admin-login .login-card {
+    padding: 24px;
+  }
+}

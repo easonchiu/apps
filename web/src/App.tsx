@@ -6,20 +6,25 @@ import Privacy from './pages/privacy';
 import Contact from './pages/contact';
 import Feedback from './pages/feedback';
 import NotFound from './pages/not-found';
+import AdminLogin from './pages/admin/login';
+import AdminFeedbacks from './pages/admin/feedbacks';
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/games/:gameId" element={<GameDetail />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/feedback" element={<Feedback />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        {/* Admin routes — no Layout */}
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/feedbacks" element={<AdminFeedbacks />} />
+
+        {/* Main site routes — with Layout */}
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/games/:gameId" element={<Layout><GameDetail /></Layout>} />
+        <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/feedback" element={<Layout><Feedback /></Layout>} />
+        <Route path="*" element={<Layout><NotFound /></Layout>} />
+      </Routes>
     </BrowserRouter>
   );
 }

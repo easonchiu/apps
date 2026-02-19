@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"strings"
 	"ysgame/controllers"
+	"ysgame/middleware"
 	"ysgame/ui"
 
 	"github.com/gin-gonic/gin"
@@ -15,6 +16,16 @@ func RegisterRouters(g *gin.Engine) {
 	api := g.Group("/wwwapi")
 	{
 		api.POST("/feedback", controllers.SubmitFeedback)
+		api.POST("/admin/login", controllers.AdminLogin)
+	}
+
+	// Protected admin API routes
+	adminAPI := api.Group("/admin")
+	adminAPI.Use(middleware.JWTAuth())
+	{
+		adminAPI.GET("/feedbacks", controllers.ListFeedback)
+		adminAPI.DELETE("/feedbacks", controllers.BatchDeleteFeedback)
+		adminAPI.PUT("/feedbacks/status", controllers.BatchUpdateFeedbackStatus)
 	}
 
 	g.GET("/robots.txt", controllers.ReturnRobotsTxt)
