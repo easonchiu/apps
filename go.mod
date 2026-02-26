@@ -1,9 +1,12 @@
 module ysgame
 
-go 1.20
+go 1.21
+
+toolchain go1.23.4
 
 require (
 	github.com/gin-gonic/gin v1.9.1
+	github.com/golang-jwt/jwt/v5 v5.3.1
 	go.mongodb.org/mongo-driver v1.17.9
 )
 

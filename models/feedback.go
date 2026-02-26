@@ -12,6 +12,7 @@ type Feedback struct {
 	Email     string             `bson:"email" json:"email"`
 	Content   string             `bson:"content" json:"content"`
 	App       string             `bson:"app" json:"app"`
+	Status    string             `bson:"status" json:"status"`
 	CreatedAt time.Time          `bson:"created_at" json:"created_at"`
 }
 
