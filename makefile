@@ -20,7 +20,7 @@ dev: web-build
 build:
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o ./run -tags=jsoniter -trimpath -ldflags '-s -w'
 
-docker: build
+docker: web-build build
 	docker build --platform linux/amd64 --rm -t crpi-1q6uj003eu6yxxye.cn-shanghai.personal.cr.aliyuncs.com/yaoshang/www:latest .
 	docker push crpi-1q6uj003eu6yxxye.cn-shanghai.personal.cr.aliyuncs.com/yaoshang/www:latest
 	rm -rf ./run
