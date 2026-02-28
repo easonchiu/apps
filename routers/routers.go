@@ -29,8 +29,11 @@ func RegisterRouters(g *gin.Engine) {
 	}
 
 	g.GET("/robots.txt", controllers.ReturnRobotsTxt)
+	g.HEAD("/robots.txt", controllers.ReturnRobotsTxt)
 	g.GET("/sitemap.xml", controllers.ReturnSitemap)
+	g.HEAD("/sitemap.xml", controllers.ReturnSitemap)
 	g.GET("/app-ads.txt", controllers.ReturnAppAds)
+	g.HEAD("/app-ads.txt", controllers.ReturnAppAds)
 
 	// Get the embedded file system
 	distFS := ui.GetDistFS()
